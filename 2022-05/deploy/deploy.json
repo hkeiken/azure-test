@@ -212,9 +212,6 @@
             "apiVersion": "2021-11-01",
             "name": "[parameters('availabilitySets_vmseries_fw_as_name')]",
             "location": "norwayeast",
-            "dependsOn": [
-                "[resourceId('Microsoft.Compute/virtualMachines', parameters('virtualMachines_vmseries_fw_vm1_name'))]"
-            ],
             "sku": {
                 "name": "Aligned"
             },
