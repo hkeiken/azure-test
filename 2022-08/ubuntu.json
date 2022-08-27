@@ -242,7 +242,7 @@
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPasswordOrKey')]",
           "linuxConfiguration": "[if(equals(parameters('authenticationType'), 'password'), null(), variables('linuxConfiguration'))]",
-          "customData": "[concat('#include\nhttps://raw.githubusercontent.com/hkeiken/azure-test/0ca9fdeea55bf2cc4aa2b1f58dd077bd3b85589e/2022-08/cloud_init.txt\n')]"
+          "customData": "I2luY2x1ZGUKaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2hrZWlrZW4vYXp1cmUtdGVzdC8wY2E5ZmRlZWE1NWJmMmNjNGFhMmIxZjU4ZGQwNzdiZDNiODU1ODllLzIwMjItMDgvY2xvdWRfaW5pdC50eHQK"
         }
       },
       "dependsOn": [
