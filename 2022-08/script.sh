@@ -1,2 +1,6 @@
-#include
-https://raw.githubusercontent.com/hkeiken/azure-test/0ca9fdeea55bf2cc4aa2b1f58dd077bd3b85589e/2022-08/cloud_init.txt
+#cloud-config
+repo_update: true
+repo_upgrade: all
+
+runcmd:
+ - 'curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash'
