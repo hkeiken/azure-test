@@ -242,7 +242,7 @@
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPasswordOrKey')]",
           "linuxConfiguration": "[if(equals(parameters('authenticationType'), 'password'), null(), variables('linuxConfiguration'))]",
-          "customData": "I2Nsb3VkLWNvbmZpZwpyZXBvX3VwZGF0ZTogdHJ1ZQpyZXBvX3VwZ3JhZGU6IGFsbAoKcnVuY21kOgogLSAnY3VybCAtc0wgaHR0cHM6Ly9ha2EubXMvSW5zdGFsbEF6dXJlQ0xJRGViIHwgc3VkbyBiYXNoJw=="
+          "customData": "I2Nsb3VkLWNvbmZpZwpyZXBvX3VwZGF0ZTogdHJ1ZQpyZXBvX3VwZ3JhZGU6IGFsbAoKcGFja2FnZXM6CnB5dGhvbjMtcGlwCgpydW5jbWQ6CiAtICdjdXJsIC1zTCBodHRwczovL2FrYS5tcy9JbnN0YWxsQXp1cmVDTElEZWIgfCBzdWRvIGJhc2gnCiAtICdwaXAzIGluc3RhbGwgYXp1cmUtY29tbW9uIGF6dXJlLWNvcmUgYXp1cmUtaWRlbnRpdHkgYXp1cmUta2V5dmF1bHQta2V5cyBhenVyZS1rZXl2YXVsdC1zZWNyZXRzICcKIC0gJ3BpcDMgaW5zdGFsbCBhenVyZS1tZ210LWF1dGhvcml6YXRpb24gYXp1cmUtbWdtdC1jb21wdXRlIGF6dXJlLW1nbXQtY29yZSBhenVyZS1tZ210LWtleXZhdWx0JwogLSAncGlwMyBpbnN0YWxsIGF6dXJlLW1nbXQtbXNpIGF6dXJlLW1nbXQtbmV0d29yayBhenVyZS1tZ210LXJlc291cmNlIGF6dXJlLW1nbXQtc3RvcmFnZSBhenVyZS1zdG9yYWdlLWJsb2In"
         }
       },
       "dependsOn": [
