@@ -3,7 +3,8 @@ repo_update: true
 repo_upgrade: all
 
 packages:
-python3-pip
+ - python3-pip
+ - vim
 
 runcmd:
  - 'curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash'

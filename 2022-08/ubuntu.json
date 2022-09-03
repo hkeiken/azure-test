@@ -242,7 +242,7 @@
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPasswordOrKey')]",
           "linuxConfiguration": "[if(equals(parameters('authenticationType'), 'password'), null(), variables('linuxConfiguration'))]",
-          "customData": "I2Nsb3VkLWNvbmZpZwpyZXBvX3VwZGF0ZTogdHJ1ZQpyZXBvX3VwZ3JhZGU6IGFsbAoKcGFja2FnZXM6CnB5dGhvbjMtcGlwCgpydW5jbWQ6CiAtICdjdXJsIC1zTCBodHRwczovL2FrYS5tcy9JbnN0YWxsQXp1cmVDTElEZWIgfCBzdWRvIGJhc2gnCiAtICdwaXAzIGluc3RhbGwgYXp1cmUtY29tbW9uIGF6dXJlLWNvcmUgYXp1cmUtaWRlbnRpdHkgYXp1cmUta2V5dmF1bHQta2V5cyBhenVyZS1rZXl2YXVsdC1zZWNyZXRzICcKIC0gJ3BpcDMgaW5zdGFsbCBhenVyZS1tZ210LWF1dGhvcml6YXRpb24gYXp1cmUtbWdtdC1jb21wdXRlIGF6dXJlLW1nbXQtY29yZSBhenVyZS1tZ210LWtleXZhdWx0JwogLSAncGlwMyBpbnN0YWxsIGF6dXJlLW1nbXQtbXNpIGF6dXJlLW1nbXQtbmV0d29yayBhenVyZS1tZ210LXJlc291cmNlIGF6dXJlLW1nbXQtc3RvcmFnZSBhenVyZS1zdG9yYWdlLWJsb2In"
+          "customData": "[base64(concat('#cloud-config\n\nrepo_update: true\nrepo_upgrade: all\n\npackages:\n - python3-pip\n - vim\n\nruncmd:\n - 'curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash'\n - 'pip3 install azure-common azure-core azure-identity azure-keyvault-keys azure-keyvault-secrets '\n - 'pip3 install azure-mgmt-authorization azure-mgmt-compute azure-mgmt-core azure-mgmt-keyvault'\n - 'pip3 install azure-mgmt-msi azure-mgmt-network azure-mgmt-resource azure-mgmt-storage azure-storage-blob'\n))]"
         }
       },
       "dependsOn": [
