@@ -93,6 +93,7 @@
     }
   },
   "variables": {
+    "singleQuote": "'",
     "publicIPAddressName": "[format('{0}PublicIP', parameters('vmName'))]",
     "networkInterfaceName": "[format('{0}NetInt', parameters('vmName'))]",
     "osDiskType": "Standard_LRS",
@@ -242,7 +243,8 @@
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPasswordOrKey')]",
           "linuxConfiguration": "[if(equals(parameters('authenticationType'), 'password'), null(), variables('linuxConfiguration'))]",
-          "customData": "[base64(concat('#cloud-config\n\nrepo_update: true\nrepo_upgrade: all\n\npackages:\n - python3-pip\n - vim\n\nruncmd:\n - \"curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash\"\n - \"pip3 install azure-common azure-core azure-identity azure-keyvault-keys azure-keyvault-secrets \"\n - \"pip3 install azure-mgmt-authorization azure-mgmt-compute azure-mgmt-core azure-mgmt-keyvault\"\n - \"pip3 install azure-mgmt-msi azure-mgmt-network azure-mgmt-resource azure-mgmt-storage azure-storage-blob\"\n'))]"
+          // "customData": "[base64(concat('#cloud-config\n\nrepo_update: true\nrepo_upgrade: all\n\npackages:\n - python3-pip\n - vim\n\nruncmd:\n - \"curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash\"\n - \"pip3 install azure-common azure-core azure-identity azure-keyvault-keys azure-keyvault-secrets \"\n - \"pip3 install azure-mgmt-authorization azure-mgmt-compute azure-mgmt-core azure-mgmt-keyvault\"\n - \"pip3 install azure-mgmt-msi azure-mgmt-network azure-mgmt-resource azure-mgmt-storage azure-storage-blob\"\n'))]"
+          "customData": "[base64(concat('#cloud-config\n\nrepo_update: true\nrepo_upgrade: all\n\npackages:\n - python3-pip\n - vim\n\nruncmd:\n - ', variables('singleQuote'), 'curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash', variables('singleQuote'), '\n - ', variables('singleQuote'), 'pip3 install azure-common azure-core azure-identity azure-keyvault-keys azure-keyvault-secrets ', variables('singleQuote'), '\n - ', variables('singleQuote'), 'pip3 install azure-mgmt-authorization azure-mgmt-compute azure-mgmt-core azure-mgmt-keyvault', variables('singleQuote'), '\n - ', variables('singleQuote'), 'pip3 install azure-mgmt-msi azure-mgmt-network azure-mgmt-resource azure-mgmt-storage azure-storage-blob', variables('singleQuote'), '\n'))]"
         }
       },
       "dependsOn": [
